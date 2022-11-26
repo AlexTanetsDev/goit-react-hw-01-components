@@ -1,13 +1,16 @@
-export const TransactionHistory = ({items}) => {
-    return (
-        <table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
+import PropTypes, { shape } from 'prop-types';
+
+export const TransactionHistory = ({ items }) => {
+  return (
+      
+<table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Currency</th>
+     </tr>
+    </thead>
 
   <tbody>
         {items.map(item => (
@@ -22,4 +25,14 @@ export const TransactionHistory = ({items}) => {
   
 </table>
     )
+}
+
+
+TransactionHistory.protoTypes = {
+  items: PropTypes.arrayOf(shape({
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  }))
 }
