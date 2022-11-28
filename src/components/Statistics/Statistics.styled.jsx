@@ -23,6 +23,7 @@ export const StatisticItem = styled.li`
   flex-grow: 1;
   gap: 5px;
   padding: 10px;
+  color: #fff;
 
   border: 1px solid #272727;
   background-color: ${function getRandomHexColor() {
