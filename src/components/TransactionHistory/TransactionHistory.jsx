@@ -17,13 +17,18 @@ export const TransactionHistory = ({ items }) => {
       </thead>
 
       <tbody>
-        {items.map((item, index) => (
-          <TbodyRow key={item.id} index={index}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
-          </TbodyRow>
-        ))}
+        {items.map((item, index) => {
+          const typeToNormalize = item.type.split('');
+          typeToNormalize[0] = typeToNormalize[0].toUpperCase();
+          const normalizedType = typeToNormalize.join('');
+          return (
+            <TbodyRow key={item.id} index={index}>
+              <td type={'type'}>{normalizedType}</td>
+              <td>{item.amount}</td>
+              <td>{item.currency}</td>
+            </TbodyRow>
+          );
+        })}
       </tbody>
     </TransactionsTable>
   );

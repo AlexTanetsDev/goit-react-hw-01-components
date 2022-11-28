@@ -25,4 +25,7 @@ export const StatisticItem = styled.li`
   padding: 10px;
 
   border: 1px solid #272727;
+  background-color: ${function getRandomHexColor() {
+    return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  }};
 `;

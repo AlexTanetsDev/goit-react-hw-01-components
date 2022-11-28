@@ -8,6 +8,7 @@ export const ProfileCard = styled.div`
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   padding-top: 15px;
   border-radius: 5px;
 
